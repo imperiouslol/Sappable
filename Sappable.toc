@@ -1,0 +1,5 @@
+## Interface: 80200
+## Title: Sappable
+## Notes: Display icon to indicate whether or not target/focus units are "Sappable".
+Sappable.lua
+Sappable.xml
