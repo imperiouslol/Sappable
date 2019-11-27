@@ -1,5 +1,3 @@
-sappableCreatureTypes = {'Humanoid', 'Beast', 'Demon', 'Dragonkin'};
-
 targetIndicator=CreateFrame("Frame");
 targetIndicator:SetParent(TargetFrame);
 targetIndicator:SetPoint("Right", TargetFrame, -15);
@@ -18,21 +16,8 @@ focusIndicator.t:SetAllPoints();
 focusIndicator.t:SetTexture("Interface\\Icons\\ABILITY_SAP");
 focusIndicator:Hide();
 
-local function creatureIsSappable(unit)
-	creatureType = UnitCreatureType(unit)
-	for index, value in ipairs(sappableCreatureTypes) do
-		if (value == creatureType) then
-                	return true;
-		end;
-        end;
-	
-	return false;
-end;
-
-
 local function showIndicator(self, unit)
-	if (creatureIsSappable(unit)
-                and not UnitIsFriend("player", unit)
+	if (not UnitIsFriend("player", unit)
 		and not UnitAffectingCombat(unit)) then
 		self:Show();
         else
