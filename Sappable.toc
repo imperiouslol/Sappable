@@ -1,4 +1,4 @@
-## Interface: 90002
+## Interface: 80000
 ## Title: Sappable
 ## Notes: Display icon to indicate whether or not target/focus units are "Sappable".
 Sappable.lua
