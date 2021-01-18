@@ -1,4 +1,12 @@
-sappableCreatureTypes = {'Humanoid', 'Beast', 'Demon', 'Dragonkin'};
+local function defaultFunc(L, key)
+	return key;
+end
+
+MyLocalizationTable = setmetatable({}, {__index=defaultFunc});
+
+local L = MyLocalizationTable;
+
+sappableCreatureTypes = {L["Humanoid"], L["Beast"], L["Demon"], L["Dragonkin"]};
 
 targetIndicator=CreateFrame("Frame");
 targetIndicator:SetParent(TargetFrame);
