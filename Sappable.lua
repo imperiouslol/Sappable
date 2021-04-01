@@ -16,33 +16,6 @@ focusIndicator.t:SetAllPoints();
 focusIndicator.t:SetTexture("Interface\\Icons\\ABILITY_SAP");
 focusIndicator:Hide();
 
---[[local function getSappableCreatureTypes()
-	local locale = GetLocale()
-	if locale == "deDE" then
-		return {"Humanoid", "Wildtier", "Dämon", "Drachkin"};
-	elseif locale == "esES" then
-		return {"Humanoide", "Bestia", "Demonio", "Dragonante"};
-	elseif locale == "esMX" then
-		return {"Humanoide", "Bestia", "Demonio", "Dragonante"};
-	elseif locale == "frFR" then
-		return {"d’humanoïde", "de bête", "Démon", "draconiques"};
-	elseif locale == "itIT" then
-		return {"Umanoidi", "Bestiali", "Demone", "Dragoidi"};
-	elseif locale == "koKR" then
-		return {"인간형", "야수", "악마", "용족"};
-	elseif locale == "ptBR" then
-		return {"Humanoide", "Fera", "Demônio", "Draconiano"};
-	elseif locale == "zhCN" then
-		return {"人型", "野兽", "恶魔", "龙类"};
-	elseif locale == "zhTW" then
-		return {"人形", "野獸", "惡魔", "龍類"};
-	else
-		return {"Humanoid", "Beast", "Demon", "Dragonkin"};
-	end;
-end;
-
-sappableCreatureTypes = getSappableCreatureTypes();]]
-
 tCreatureTypesByLocale = {};
 tCreatureTypesByLocale["enUS"]={"Humanoid", "Beast", "Demon", "Dragonkin"};
 tCreatureTypesByLocale["deDE"]={"Humanoid", "Wildtier", "Dämon", "Drachkin"};
