@@ -1,45 +1,3 @@
-local locale = GetLocale()
-
-if locale == "enUS" then
-	sappableCreatureTypes = {"Humanoid", "Beast", "Demon", "Dragonkin"};
-end
-
-if locale == "deDE" then
-	sappableCreatureTypes = {"Humanoid", "Wildtier", "Dämon", "Drachkin"};
-end
-
-if locale == "esES" then
-	sappableCreatureTypes = {"Humanoide", "Bestia", "Demonio", "Dragonante"};
-end
-
-if locale == "esMX" then
-	sappableCreatureTypes = {"Humanoide", "Bestia", "Demonio", "Dragonante"};
-end
-
-if locale == "frFR" then
-	sappableCreatureTypes = {"d’humanoïde", "de bête", "Démon", "draconiques"};
-end
-
-if locale == "itIT" then
-	sappableCreatureTypes = {"Umanoidi", "Bestiali", "Demone", "Dragoidi"};
-end
-
-if locale == "koKR" then
-	sappableCreatureTypes = {"인간형", "야수", "악마", "용족"};
-end
-
-if locale == "ptBR" then
-	sappableCreatureTypes = {"Humanoide", "Fera", "Demônio", "Draconiano"};
-end
-
-if locale == "zhCN" then
-	sappableCreatureTypes = {"人型", "野兽", "恶魔", "龙类"};
-end
-
-if locale == "zhTW" then
-	sappableCreatureTypes = {"人形", "野獸", "惡魔", "龍類"};
-end
-
 targetIndicator=CreateFrame("Frame");
 targetIndicator:SetParent(TargetFrame);
 targetIndicator:SetPoint("Right", TargetFrame, -15);
@@ -58,9 +16,34 @@ focusIndicator.t:SetAllPoints();
 focusIndicator.t:SetTexture("Interface\\Icons\\ABILITY_SAP");
 focusIndicator:Hide();
 
+local function getSappableCreatureTypes()
+	local locale = GetLocale()
+	if locale == "deDE" then
+		return {"Humanoid", "Wildtier", "Dämon", "Drachkin"};
+	elseif locale == "esES" then
+		return {"Humanoide", "Bestia", "Demonio", "Dragonante"};
+	elseif locale == "esMX" then
+		return {"Humanoide", "Bestia", "Demonio", "Dragonante"};
+	elseif locale == "frFR" then
+		return {"d’humanoïde", "de bête", "Démon", "draconiques"};
+	elseif locale == "itIT" then
+		return {"Umanoidi", "Bestiali", "Demone", "Dragoidi"};
+	elseif locale == "koKR" then
+		return {"인간형", "야수", "악마", "용족"};
+	elseif locale == "ptBR" then
+		return {"Humanoide", "Fera", "Demônio", "Draconiano"};
+	elseif locale == "zhCN" then
+		return {"人型", "野兽", "恶魔", "龙类"};
+	elseif locale == "zhTW" then
+		return {"人形", "野獸", "惡魔", "龍類"};
+	else
+		return {"Humanoid", "Beast", "Demon", "Dragonkin"};
+	end;
+end;
+
 local function creatureIsSappable(unit)
 	creatureType = UnitCreatureType(unit)
-	for index, value in ipairs(sappableCreatureTypes) do
+	for index, value in ipairs(getSappableCreatureTypes()) do
 		if (value == creatureType) then
                 	return true;
 		end;
