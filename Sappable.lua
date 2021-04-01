@@ -1,52 +1,42 @@
---local function defaultFunc(L, key)
---	return key;
---end
+local locale = GetLocale()
 
---MyLocalizationTable = setmetatable({}, {__index=defaultFunc});
-
---local L = MyLocalizationTable;
-
---sappableCreatureTypes = {L["Humanoid"], L["Beast"], L["Demon"], L["Dragonkin"]};
-
-local LOCALE = GetLocale()
-
-if LOCALE == "enUS" then
-sappableCreatureTypes = {"Humanoid", "Beast", "Demon", "Dragonkin"};
+if locale == "enUS" then
+	sappableCreatureTypes = {"Humanoid", "Beast", "Demon", "Dragonkin"};
 end
 
-if LOCALE == "deDE" then
+if locale == "deDE" then
 	sappableCreatureTypes = {"Humanoid", "Wildtier", "Dämon", "Drachkin"};
 end
 
-if LOCALE == "esES" then
+if locale == "esES" then
 	sappableCreatureTypes = {"Humanoide", "Bestia", "Demonio", "Dragonante"};
 end
 
-if LOCALE == "esMX" then
+if locale == "esMX" then
 	sappableCreatureTypes = {"Humanoide", "Bestia", "Demonio", "Dragonante"};
 end
 
-if LOCALE == "frFR" then
+if locale == "frFR" then
 	sappableCreatureTypes = {"d’humanoïde", "de bête", "Démon", "draconiques"};
 end
 
-if LOCALE == "itIT" then
+if locale == "itIT" then
 	sappableCreatureTypes = {"Umanoidi", "Bestiali", "Demone", "Dragoidi"};
 end
 
-if LOCALE == "koKR" then
+if locale == "koKR" then
 	sappableCreatureTypes = {"인간형", "야수", "악마", "용족"};
 end
 
-if LOCALE == "ptBR" then
+if locale == "ptBR" then
 	sappableCreatureTypes = {"Humanoide", "Fera", "Demônio", "Draconiano"};
 end
 
-if LOCALE == "zhCN" then
+if locale == "zhCN" then
 	sappableCreatureTypes = {"人型", "野兽", "恶魔", "龙类"};
 end
 
-if LOCALE == "zhTW" then
+if locale == "zhTW" then
 	sappableCreatureTypes = {"人形", "野獸", "惡魔", "龍類"};
 end
 
