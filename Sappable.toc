@@ -1,5 +1,6 @@
 ## Interface: 90002
 ## Title: Sappable
 ## Notes: Display icon to indicate whether or not target/focus units are "Sappable".
+## SavedVariablesPerCharacter: indicatorScale
 Sappable.lua
 Sappable.xml
